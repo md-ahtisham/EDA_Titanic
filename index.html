@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titanic Dataset EDA - Survival Pattern Analysis</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="presentation-container">
+        <!-- Navigation Header -->
+        <div class="nav-header">
+            <div class="slide-counter">
+                <span id="current-slide">1</span> of <span id="total-slides">8</span>
+            </div>
+            <div class="nav-controls">
+                <button id="prev-btn" class="btn btn--outline btn--sm" disabled>Previous</button>
+                <button id="next-btn" class="btn btn--primary btn--sm">Next</button>
+            </div>
+        </div>
+
+        <!-- Slide 1: Title Slide -->
+        <div class="slide active" id="slide-1">
+            <div class="slide-content title-slide">
+                <h1>Titanic Dataset</h1>
+                <h2>Exploratory Data Analysis</h2>
+                <div class="subtitle">Identifying Survival Patterns</div>
+                <div class="author-info">
+                    <p>Comprehensive Analysis of Passenger Demographics and Survival Factors</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Agenda -->
+        <div class="slide" id="slide-2">
+            <div class="slide-content">
+                <h2>Agenda</h2>
+                <div class="agenda-list">
+                    <div class="agenda-item">
+                        <div class="agenda-number">1</div>
+                        <div class="agenda-text">
+                            <h3>Loading and Understanding Data</h3>
+                            <p>Dataset overview, structure, and missing values analysis</p>
+                        </div>
+                    </div>
+                    <div class="agenda-item">
+                        <div class="agenda-number">2</div>
+                        <div class="agenda-text">
+                            <h3>Numerical Analysis</h3>
+                            <p>Statistical analysis of age and fare distributions using histograms and box plots</p>
+                        </div>
+                    </div>
+                    <div class="agenda-item">
+                        <div class="agenda-number">3</div>
+                        <div class="agenda-text">
+                            <h3>Categorical Analysis</h3>
+                            <p>Analysis of survival patterns by gender and class using bar and pie charts</p>
+                        </div>
+                    </div>
+                    <div class="agenda-item">
+                        <div class="agenda-number">4</div>
+                        <div class="agenda-text">
+                            <h3>Survival Pattern Analysis</h3>
+                            <p>Understanding relationships between survival and other passenger characteristics</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Loading and Understanding Data -->
+        <div class="slide" id="slide-3">
+            <div class="slide-content">
+                <h2>Loading and Understanding Data</h2>
+                <div class="data-overview">
+                    <div class="overview-grid">
+                        <div class="overview-card">
+                            <h3>Dataset Overview</h3>
+                            <div class="stat-item">
+                                <span class="stat-label">Total Passengers:</span>
+                                <span class="stat-value">891</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Overall Survival Rate:</span>
+                                <span class="stat-value">36.7%</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Survivors:</span>
+                                <span class="stat-value">327</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Non-survivors:</span>
+                                <span class="stat-value">564</span>
+                            </div>
+                        </div>
+                        <div class="overview-card">
+                            <h3>Missing Data Analysis</h3>
+                            <div class="stat-item">
+                                <span class="stat-label">Age Missing:</span>
+                                <span class="stat-value">178 (19.98%)</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Cabin Missing:</span>
+                                <span class="stat-value">692 (77.67%)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="key-insights">
+                        <h3>Key Data Characteristics</h3>
+                        <ul>
+                            <li>Dataset contains information about 891 Titanic passengers</li>
+                            <li>Only 36.7% of passengers survived the disaster</li>
+                            <li>Significant missing data in Age (20%) and Cabin (78%) columns</li>
+                            <li>Complete data available for survival, gender, and passenger class</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Numerical Analysis -->
+        <div class="slide" id="slide-4">
+            <div class="slide-content">
+                <h2>Numerical Analysis - Age Distribution</h2>
+                <div class="analysis-content">
+                    <div class="chart-container">
+                        <img src="age_distribution_histogram.png" alt="Age Distribution Histogram" class="chart-image">
+                    </div>
+                    <div class="analysis-insights">
+                        <h3>Age Statistics</h3>
+                        <div class="stat-grid">
+                            <div class="stat-item">
+                                <span class="stat-label">Mean Age:</span>
+                                <span class="stat-value">29.4 years</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Child Survival:</span>
+                                <span class="stat-value">35.0%</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Teen Survival:</span>
+                                <span class="stat-value">39.7%</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Adult Survival:</span>
+                                <span class="stat-value">36.7%</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Senior Survival:</span>
+                                <span class="stat-value">20.0%</span>
+                            </div>
+                        </div>
+                        <div class="key-finding">
+                            <strong>Key Finding:</strong> Age distribution shows most passengers were adults aged 20-40. Senior passengers had notably lower survival rates (20%).
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Categorical Analysis -->
+        <div class="slide" id="slide-5">
+            <div class="slide-content">
+                <h2>Categorical Analysis - Survival by Demographics</h2>
+                <div class="analysis-content">
+                    <div class="chart-container">
+                        <img src="download.png" alt="Survival Rates by Demographics" class="chart-image">
+                    </div>
+                    <div class="analysis-insights">
+                        <h3>Gender Analysis</h3>
+                        <div class="stat-grid">
+                            <div class="stat-item">
+                                <span class="stat-label">Female Survival:</span>
+                                <span class="stat-value status--success">74.2%</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Male Survival:</span>
+                                <span class="stat-value status--error">18.9%</span>
+                            </div>
+                        </div>
+                        <h3>Class Analysis</h3>
+                        <div class="stat-grid">
+                            <div class="stat-item">
+                                <span class="stat-label">1st Class:</span>
+                                <span class="stat-value">63.1% (184 passengers)</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">2nd Class:</span>
+                                <span class="stat-value">47.6% (103 passengers)</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">3rd Class:</span>
+                                <span class="stat-value">24.5% (44 passengers)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Survival Pattern Analysis -->
+        <div class="slide" id="slide-6">
+            <div class="slide-content">
+                <h2>Survival Pattern Analysis - Correlation Matrix</h2>
+                <div class="analysis-content">
+                    <div class="chart-container">
+                        <img src="download (1).png" alt="Correlation Matrix" class="chart-image">
+                    </div>
+                    <div class="analysis-insights">
+                        <h3>Correlation Analysis</h3>
+                        <div class="stat-grid">
+                            <div class="stat-item">
+                                <span class="stat-label">Survival vs Class:</span>
+                                <span class="stat-value">-0.34</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Survival vs Fare:</span>
+                                <span class="stat-value">0.26</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Survival vs Age:</span>
+                                <span class="stat-value">-0.07</span>
+                            </div>
+                        </div>
+                        <div class="correlation-insights">
+                            <h4>Insights:</h4>
+                            <ul>
+                                <li>Moderate negative correlation between survival and class (lower class number = higher survival)</li>
+                                <li>Weak positive correlation between survival and fare</li>
+                                <li>Very weak correlation between survival and age</li>
+                                <li>Family size shows minimal impact on survival rates</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Key Findings -->
+        <div class="slide" id="slide-7">
+            <div class="slide-content">
+                <h2>Key Findings</h2>
+                <div class="findings-container">
+                    <div class="finding-card priority-high">
+                        <div class="finding-icon">🔍</div>
+                        <div class="finding-content">
+                            <h3>Primary Finding</h3>
+                            <p>Gender was the strongest predictor of survival (Women: 71.7% vs Men: 17.7%)</p>
+                        </div>
+                    </div>
+                    <div class="finding-card priority-medium">
+                        <div class="finding-icon">📊</div>
+                        <div class="finding-content">
+                            <h3>Class Impact</h3>
+                            <p>Passenger class showed minimal impact on survival rates across all classes</p>
+                        </div>
+                    </div>
+                    <div class="finding-card priority-medium">
+                        <div class="finding-icon">👥</div>
+                        <div class="finding-content">
+                            <h3>Age Patterns</h3>
+                            <p>Age groups had similar survival rates except seniors (20%)</p>
+                        </div>
+                    </div>
+                    <div class="finding-card priority-low">
+                        <div class="finding-icon">💰</div>
+                        <div class="finding-content">
+                            <h3>Other Factors</h3>
+                            <p>Family size and fare had weak correlations with survival</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="summary-box">
+                    <h3>Summary</h3>
+                    <p>The analysis reveals that gender was the most significant factor in determining survival on the Titanic, with women having a survival rate more than 4 times higher than men. This aligns with the "women and children first" evacuation protocol.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Conclusion -->
+        <div class="slide" id="slide-8">
+            <div class="slide-content conclusion-slide">
+                <h2>Conclusion</h2>
+                <div class="conclusion-content">
+                    <div class="conclusion-summary">
+                        <h3>Data-Driven Insights</h3>
+                        <div class="insight-grid">
+                            <div class="insight-item">
+                                <h4>Survival Factors</h4>
+                                <p>Gender emerged as the primary determinant of survival, overshadowing economic class and age factors.</p>
+                            </div>
+                            <div class="insight-item">
+                                <h4>Social Protocols</h4>
+                                <p>The "women and children first" maritime tradition was clearly evident in the survival patterns.</p>
+                            </div>
+                            <div class="insight-item">
+                                <h4>Data Quality</h4>
+                                <p>Despite missing data in age and cabin information, clear patterns emerged from available demographics.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="recommendations">
+                        <h3>Analytical Recommendations</h3>
+                        <ul>
+                            <li>Focus on gender-based analysis for historical maritime disaster studies</li>
+                            <li>Consider social protocols and evacuation procedures in survival modeling</li>
+                            <li>Investigate fare and cabin data for deeper economic impact analysis</li>
+                            <li>Explore family group dynamics for comprehensive survival pattern understanding</li>
+                        </ul>
+                    </div>
+                    <div class="thank-you">
+                        <h2>Thank You</h2>
+                        <p>Questions & Discussion</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
